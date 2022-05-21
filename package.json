@@ -63,6 +63,6 @@
     }
   },
   "msw": {
-    "workerDirectory": "public"
+    "workerDirectory": "public/vue-tempalte"
   }
 }

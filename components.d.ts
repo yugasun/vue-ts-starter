@@ -5,8 +5,6 @@ import '@vue/runtime-core';
 
 declare module '@vue/runtime-core' {
     export interface GlobalComponents {
-        Avatar: typeof import('./src/components/Avatar.vue')['default'];
-        ElAside: typeof import('element-plus/es')['ElAside'];
         ElButton: typeof import('element-plus/es')['ElButton'];
         ElContainer: typeof import('element-plus/es')['ElContainer'];
         ElDialog: typeof import('element-plus/es')['ElDialog'];
@@ -14,19 +12,13 @@ declare module '@vue/runtime-core' {
         ElForm: typeof import('element-plus/es')['ElForm'];
         ElFormItem: typeof import('element-plus/es')['ElFormItem'];
         ElHeader: typeof import('element-plus/es')['ElHeader'];
-        ElIcon: typeof import('element-plus/es')['ElIcon'];
         ElInput: typeof import('element-plus/es')['ElInput'];
         ElMain: typeof import('element-plus/es')['ElMain'];
-        ElMenu: typeof import('element-plus/es')['ElMenu'];
-        ElMenuItem: typeof import('element-plus/es')['ElMenuItem'];
-        ElOption: typeof import('element-plus/es')['ElOption'];
         ElPageHeader: typeof import('element-plus/es')['ElPageHeader'];
         ElPopconfirm: typeof import('element-plus/es')['ElPopconfirm'];
-        ElSelect: typeof import('element-plus/es')['ElSelect'];
         Footer: typeof import('./src/components/Footer.vue')['default'];
         Header: typeof import('./src/components/Header.vue')['default'];
         HelloWorld: typeof import('./src/components/HelloWorld.vue')['default'];
-        Login: typeof import('./src/components/Login.vue')['default'];
         Menu: typeof import('./src/components/Menu.vue')['default'];
         RouterLink: typeof import('vue-router')['RouterLink'];
         RouterView: typeof import('vue-router')['RouterView'];

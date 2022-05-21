@@ -9,13 +9,9 @@ import '@/assets/styles/index.scss';
 
 async function main() {
     // Start mock server
-    if (import.meta.env.DEV || import.meta.env.GITHUB_PAGE) {
+    if (import.meta.env.DEV || import.meta.env.VITE_IS_VERCEL) {
         const { worker } = await import('./mocks/index');
-        worker.start({
-            serviceWorker: {
-                url: `.${import.meta.env.BASE_URL}mockServiceWorker.js`,
-            },
-        });
+        worker.start();
     }
 
     const app = createApp(App);

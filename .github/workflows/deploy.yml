@@ -47,17 +47,25 @@ jobs:
               run: pnpm install
 
             - name: Build website
-              run: npx msw init public/vue-tempalte --save && pnpm build
+              run: pnpm build
               env:
-                  GITHUB_PAGE: true
+                  VITE_IS_VERCEL: true
                   NODE_ENV: production
 
-            - name: Deploy
-              uses: JamesIves/github-pages-deploy-action@v4.3.3
-              with:
-                  token: ${{ secrets.GITHUB_TOKEN }}
-                  branch: gh-pages
-                  folder: dist
-                  git-config-name: yugasun
-                  git-config-email: yuga_sun@163.com
-                  commit-message: website deploy
+            # - name: Deploy
+            #   uses: JamesIves/github-pages-deploy-action@v4.3.3
+            #   with:
+            #       token: ${{ secrets.GITHUB_TOKEN }}
+            #       branch: gh-pages
+            #       folder: dist
+            #       git-config-name: yugasun
+            #       git-config-email: yuga_sun@163.com
+            #       commit-message: website deploy
+
+            # - name: Deploy
+            #   uses: amondnet/vercel-action@v20
+            #   with:
+            #       vercel-token: ${{ secrets.VERCEL_TOKEN }} # Required
+            #       github-token: ${{ secrets.GITHUB_TOKEN }} #Optional
+            #       vercel-org-id: yugasun
+            #       vercel-project-id: vue-template
