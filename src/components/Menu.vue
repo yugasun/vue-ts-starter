@@ -3,12 +3,6 @@ import { ref } from 'vue';
 import { Menu as IconMenu, HomeFilled } from '@element-plus/icons-vue';
 
 const isCollapse = ref(false);
-const handleOpen = (key: string, keyPath: string[]) => {
-    console.log(key, keyPath);
-};
-const handleClose = (key: string, keyPath: string[]) => {
-    console.log(key, keyPath);
-};
 </script>
 <template>
     <el-menu

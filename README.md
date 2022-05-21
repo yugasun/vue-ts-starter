@@ -8,7 +8,6 @@ This template should help get you started developing with Vue 3 and TypeScript i
 -   [x] [Vue Router](https://github.com/vuejs/router)
 -   [x] [TypeScript](https://www.typescriptlang.org/)
 -   [x] [Vite](https://vitejs.dev/) Next Generation Frontend Tooling
-
 -   [x] [Pinia](https://pinia.vuejs.org/) The Vue Store that you will enjoy using
 -   [x] [Element Plus](https://github.com/element-plus/element-plus) 🎉 A Vue.js 3 UI Library made by Element team
 -   [x] [vueuse](https://github.com/vueuse/vueuse) Collection of essential Vue Composition Utilities for Vue 2 and 3

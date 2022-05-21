@@ -1,6 +1,9 @@
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+import UserInfo from './UserInfo.vue';
+</script>
 <template>
-    <h3 class="title">Vue3 + TypeScriipt + Vite Template</h3>
+    <h3 class="title">Vue3 + TypeScript + Vite Template</h3>
+    <UserInfo />
 </template>
 <style lang="scss" scoped>
 .title {

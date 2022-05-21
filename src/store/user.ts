@@ -1,15 +1,27 @@
 import { defineStore } from 'pinia';
 
+interface UserInfo {
+    username: string;
+    [prop: string]: any;
+}
+
+interface UserState {
+    userInfo: UserInfo | null;
+}
+
 export const useUserStore = defineStore({
     id: 'user',
-    state() {
+    state(): UserState {
         return {
-            name: 'sfe',
+            userInfo: null,
         };
     },
+    getters: {
+        isLogin: (state: UserState) => !!state.userInfo,
+    },
     actions: {
-        updateName(name: string) {
-            this.name = name;
+        updateUser(userInfo: UserInfo | null) {
+            this.userInfo = userInfo;
         },
     },
 });

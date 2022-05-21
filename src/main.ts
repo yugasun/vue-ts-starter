@@ -9,7 +9,7 @@ import '@/assets/styles/index.scss';
 
 async function main() {
     // Start mock server
-    if (import.meta.env.DEV) {
+    if (import.meta.env.DEV || import.meta.env.GITHUB_PAGE) {
         const { worker } = await import('./mocks/index');
         worker.start({
             serviceWorker: {

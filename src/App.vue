@@ -1,7 +1,6 @@
 <script lang="ts" setup>
 import Header from '@/components/Header.vue';
 import Footer from '@/components/Footer.vue';
-import Menu from '@/components/Menu.vue';
 import { useRoute, useRouter } from 'vue-router';
 
 const router = useRouter();
@@ -17,9 +16,6 @@ function goBack() {
             <Header />
         </el-header>
         <el-container>
-            <el-aside width="200px">
-                <Menu />
-            </el-aside>
             <el-container>
                 <el-main class="main">
                     <el-page-header
@@ -52,16 +48,10 @@ function goBack() {
     min-height: 500px;
 }
 
-.el-header,
-.el-footer {
+.el-header {
     background-color: var(--el-color-primary-light-7);
     color: var(--el-text-color-primary);
     text-align: center;
-}
-
-.el-aside {
-    background-color: var(--el-color-primary-light-8);
-    color: var(--el-text-color-primary);
-    text-align: center;
+    position: relative;
 }
 </style>
