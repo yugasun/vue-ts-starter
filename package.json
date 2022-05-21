@@ -10,6 +10,7 @@
     "prettier": "prettier --write --ignore-unknown '**/*'",
     "commit": "git-cz",
     "release": "npx bumpp --push --tag --commit",
+    "postinstall": "npx msw init ./public --save",
     "prepare": "husky install"
   },
   "dependencies": {

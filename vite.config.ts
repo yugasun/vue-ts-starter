@@ -8,6 +8,7 @@ import * as path from 'path';
 
 // https://vitejs.dev/config/
 export default defineConfig({
+    base: process.env.GITHUB_PAGE === 'true' ? '/vue-template/' : '/',
     resolve: {
         alias: {
             '@': path.resolve(__dirname, 'src'),

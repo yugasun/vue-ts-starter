@@ -47,8 +47,9 @@ jobs:
               run: pnpm install
 
             - name: Build website
-              run: pnpm build
+              run: npx msw init public/vue-tempalte --save && pnpm build
               env:
+                  GITHUB_PAGE: true
                   NODE_ENV: production
 
             - name: Deploy

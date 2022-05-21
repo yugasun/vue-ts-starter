@@ -9,9 +9,13 @@ import '@/assets/styles/index.scss';
 
 async function main() {
     // Start mock server
-    if (process.env.NODE_ENV === 'development') {
+    if (import.meta.env.DEV) {
         const { worker } = await import('./mocks/index');
-        worker.start();
+        worker.start({
+            serviceWorker: {
+                url: `.${import.meta.env.BASE_URL}mockServiceWorker.js`,
+            },
+        });
     }
 
     const app = createApp(App);
