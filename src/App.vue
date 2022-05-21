@@ -2,9 +2,14 @@
 import Header from '@/components/Header.vue';
 import Footer from '@/components/Footer.vue';
 import { useRoute, useRouter } from 'vue-router';
+import { useUserStore } from '@/store/user';
 
 const router = useRouter();
 const route = useRoute();
+
+const userStore = useUserStore();
+
+userStore.initUser();
 
 function goBack() {
     router.back();

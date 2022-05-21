@@ -1,28 +1,38 @@
 <script lang="ts" setup>
-import { ref } from 'vue';
 import { Menu as IconMenu, HomeFilled } from '@element-plus/icons-vue';
-
-const isCollapse = ref(false);
 </script>
 <template>
-    <el-menu
-        default-active="2"
-        class="el-menu-vertical-demo"
-        :collapse="isCollapse"
-        :router="true"
-    >
+    <el-menu default-active="/" class="menu" mode="horizontal" :router="true">
         <el-menu-item index="/">
             <template #title>
                 <el-icon><HomeFilled /></el-icon>
                 <span>Home</span>
             </template>
         </el-menu-item>
-        <el-menu-item index="/login">
+        <el-menu-item index="/detail">
             <template #title>
                 <el-icon><icon-menu /></el-icon>
-                <span>Login</span>
+                <span>Detail</span>
             </template>
         </el-menu-item>
     </el-menu>
 </template>
-<style lang="scss" scoped></style>
+<style lang="scss">
+.menu {
+    position: absolute;
+    left: 10px;
+    top: 5px;
+    background: none;
+    width: 400px;
+    border: none;
+    height: 48px;
+
+    .el-menu-item {
+        border: none;
+
+        &.is-active {
+            border: none !important;
+        }
+    }
+}
+</style>

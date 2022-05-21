@@ -1,19 +1,21 @@
 <script lang="ts" setup>
 import { ref } from 'vue';
+
 import { toast } from '@/utils/toast';
 import API from '@/api';
 import { useUserStore } from '@/store/user';
 
 const userStore = useUserStore();
 
-const isDialogVisible = ref(false);
+const isLoginDialogVisible = ref(false);
+const isLogoutDialogVisible = ref(false);
 const formData = ref({
     username: 'admin',
     password: 'admin',
 });
 
 function showLoginDialog() {
-    isDialogVisible.value = true;
+    isLoginDialogVisible.value = true;
 }
 
 async function submitLogin() {
@@ -24,11 +26,10 @@ async function submitLogin() {
             type: 'success',
             message: 'Login success',
         });
-        const res = await API.getUser();
+        const userRes = await API.getUser();
+        userStore.updateUser(userRes.data);
 
-        userStore.updateUser(res.data);
-
-        isDialogVisible.value = false;
+        isLoginDialogVisible.value = false;
     } else {
         toast({
             type: 'error',
@@ -38,7 +39,12 @@ async function submitLogin() {
 }
 
 function logout() {
+    isLogoutDialogVisible.value = true;
+}
+
+function logoutConfirm() {
     userStore.updateUser(null);
+    isLogoutDialogVisible.value = false;
 }
 </script>
 
@@ -48,14 +54,11 @@ function logout() {
             Hello, {{ userStore.userInfo?.username }}
         </h2>
         <el-button v-else @click="showLoginDialog">Login</el-button>
-        <el-popconfirm title="Are you sure to logout?" @confirm="logout">
-            <template #reference>
-                <el-button v-if="userStore.isLogin">Logout</el-button>
-            </template>
-        </el-popconfirm>
+        <el-button v-if="userStore.isLogin" @click="logout">Logout</el-button>
     </div>
 
-    <el-dialog v-model="isDialogVisible" title="Login">
+    <!-- login dialog -->
+    <el-dialog v-model="isLoginDialogVisible" title="Login">
         <el-form :model="formData">
             <el-form-item label="Username">
                 <el-input v-model="formData.username" autocomplete="off" />
@@ -71,8 +74,25 @@ function logout() {
         </el-form>
         <template #footer>
             <span class="dialog-footer">
-                <el-button @click="isDialogVisible = false">Cancel</el-button>
+                <el-button @click="isLoginDialogVisible = false"
+                    >Cancel</el-button
+                >
                 <el-button type="primary" @click="submitLogin"
+                    >Confirm</el-button
+                >
+            </span>
+        </template>
+    </el-dialog>
+
+    <!-- logout dialog -->
+    <el-dialog v-model="isLogoutDialogVisible" title="Logout">
+        <span>Do you confirm to logout?</span>
+        <template #footer>
+            <span class="dialog-footer">
+                <el-button @click="isLogoutDialogVisible = false"
+                    >Cancel</el-button
+                >
+                <el-button type="primary" @click="logoutConfirm"
                     >Confirm</el-button
                 >
             </span>

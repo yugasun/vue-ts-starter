@@ -1,6 +1,9 @@
 # Vue 3 + TypeScript + Vite
 
 [![Publish Docs Deploy](https://github.com/yugasun/vue-template/actions/workflows/deploy.yml/badge.svg?branch=master)](https://github.com/yugasun/vue-template/actions/workflows/deploy.yml)
+![Vue3](https://img.shields.io/badge/Framework-Vue3-42b883)
+![TypeScript](https://img.shields.io/badge/Language-TypeScript-blue)
+![Vite](https://img.shields.io/badge/Develop-Vite-747bff)
 
 This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
 
@@ -41,3 +44,7 @@ Since TypeScript cannot handle type information for `.vue` imports, they are shi
 2. Reload the VS Code window by running `Developer: Reload Window` from the command palette.
 
 You can learn more about Take Over mode [here](https://github.com/johnsoncodehk/volar/discussions/471).
+
+## License
+
+[MIT @yugasun](./LICENSE)

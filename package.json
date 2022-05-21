@@ -16,9 +16,11 @@
   "dependencies": {
     "@element-plus/icons-vue": "^1.1.4",
     "@vueuse/core": "^8.4.2",
+    "@vueuse/integrations": "^8.5.0",
     "axios": "^0.27.2",
     "element-plus": "^2.1.11",
     "pinia": "^2.0.14",
+    "universal-cookie": "^4.0.4",
     "vue": "^3.2.25",
     "vue-router": "^4.0.15"
   },
@@ -63,6 +65,6 @@
     }
   },
   "msw": {
-    "workerDirectory": "public/vue-tempalte"
+    "workerDirectory": "public"
   }
 }

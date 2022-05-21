@@ -1,19 +1,20 @@
 <script lang="ts" setup>
-import { ref } from 'vue';
 import { useUserStore } from '@/store/user';
+import { useRouter } from 'vue-router';
 
-const user = ref<{
-    username?: string;
-}>({});
+const router = useRouter();
 
 const userStore = useUserStore();
+
+function goBack() {
+    router.back();
+}
 </script>
 
 <template>
     <h1 class="title">This is Detail Page, need login</h1>
-    <p v-if="user.username" class="user-info">
-        Wellcome, {{ userStore.userInfo?.username }}
-    </p>
+    <p class="user-info">Wellcome, {{ userStore.userInfo?.username }}</p>
+    <!-- <el-button @click="goBack">Back</el-button> -->
 </template>
 
 <style lang="scss" scoped>
