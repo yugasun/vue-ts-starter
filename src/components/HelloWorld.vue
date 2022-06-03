@@ -8,7 +8,7 @@ const userStore = useUserStore();
 </script>
 
 <template>
-    <h1 class="text-primary-dark dark:text-ternary-light">{{ msg }}</h1>
+    <h1 class="text-lg text-primary-dark dark:text-ternary-light">{{ msg }}</h1>
     <p
         v-if="userStore.isLogin"
         class="text-primary-dark dark:text-ternary-light"

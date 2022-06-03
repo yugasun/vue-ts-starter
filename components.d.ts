@@ -25,6 +25,7 @@ declare module '@vue/runtime-core' {
         Menu: typeof import('./src/components/Menu.vue')['default'];
         RouterLink: typeof import('vue-router')['RouterLink'];
         RouterView: typeof import('vue-router')['RouterView'];
+        ServiceWorker: typeof import('./src/components/ServiceWorker.vue')['default'];
         ThemeSwitcher: typeof import('./src/components/ThemeSwitcher.vue')['default'];
         VueUse: typeof import('./src/components/VueUse.vue')['default'];
     }

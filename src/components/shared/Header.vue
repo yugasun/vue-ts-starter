@@ -17,7 +17,7 @@ import Menu from '../Menu.vue';
             <Menu />
         </div>
         <h3
-            class="title text-lg font-medium text-primary-dark dark:text-ternary-light"
+            class="title text-3xl font-medium text-primary-dark dark:text-ternary-light hidden sm:block"
         >
             Vue3 + TypeScript + Vite Template
         </h3>
@@ -35,7 +35,7 @@ import Menu from '../Menu.vue';
 
 .nav-left {
     position: absolute;
-    left: 50px;
+    left: 20px;
     top: 12px;
 }
 
@@ -50,14 +50,17 @@ import Menu from '../Menu.vue';
 
 .nav-right {
     position: absolute;
-    right: 50px;
+    right: 20px;
     top: 12px;
 }
 
 .title {
     line-height: 60px;
-    font-size: 26px;
     font-weight: bold;
+
+    &.title-sm {
+        font-size: 12px;
+    }
 }
 
 .switch-icon {

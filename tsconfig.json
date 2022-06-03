@@ -16,6 +16,7 @@
     "esModuleInterop": true,
     "lib": [
       "esnext",
+      "webworker",
       "dom"
     ],
     "skipLibCheck": true,

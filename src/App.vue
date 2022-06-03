@@ -1,11 +1,17 @@
 <script lang="ts" setup>
+import { useTimeAgo } from '@vueuse/core';
 import Header from '@/components/shared/Header.vue';
 import Footer from '@/components/shared/Footer.vue';
 import { useUserStore } from '@/store/user';
+import ReloadPrompt from '@/pwa/ReloadPrompt.vue';
+import ServiceWorker from './components/ServiceWorker.vue';
 
 const userStore = useUserStore();
 
 userStore.initUser();
+
+const date = '__DATE__';
+const timeAgo = useTimeAgo(date);
 </script>
 <template>
     <el-container>
@@ -13,12 +19,17 @@ userStore.initUser();
             <Header />
         </el-header>
         <el-main class="main">
+            <div>Built at: {{ date }} ({{ timeAgo }})</div>
+            <br />
             <RouterView />
+            <br />
+            <ServiceWorker />
         </el-main>
         <el-footer>
             <Footer />
         </el-footer>
     </el-container>
+    <ReloadPrompt />
 </template>
 <style lang="scss">
 #app {
@@ -34,8 +45,7 @@ userStore.initUser();
     min-height: 500px;
 }
 
-.el-header {
-    text-align: center;
-    position: relative;
+.sw-msg {
+    margin-top: 20px;
 }
 </style>

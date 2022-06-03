@@ -5,7 +5,9 @@ import VueUse from '@/components/VueUse.vue';
 
 <template>
     <img alt="Vue logo" src="@/assets/images/logo.png" />
-    <HelloWorld msg="Hello Vue 3 + TypeScript + Vite" />
+    <HelloWorld
+        msg="Vue template for starter using Vue3 + TypeScript + Vite + Pinia 🚀"
+    />
     <VueUse />
 </template>
 
