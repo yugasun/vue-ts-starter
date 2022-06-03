@@ -1,15 +1,28 @@
 <script lang="ts" setup>
-import { useMouse } from '@vueuse/core';
+import { useEyeDropper } from '@vueuse/core';
 
-const { x, y } = useMouse();
+const { isSupported, open, sRGBHex } = useEyeDropper();
 </script>
 <template>
-    <h1 class="title font-bold text-primary-dark dark:text-ternary-light">
-        Test VueUse for Mouse Event
-    </h1>
-    <h3 class="text-primary-dark dark:text-ternary-light">
-        Mouse: {{ x }}, {{ y }}
-    </h3>
+    <section
+        v-if="isSupported"
+        class="text-primary-dark dark:text-ternary-light"
+    >
+        <h3 class="title font-bold">Vueuse Example</h3>
+        <div>isSupported: {{ isSupported }}</div>
+        <div>
+            sRGBHex: <span :style="{ color: sRGBHex }">{{ sRGBHex }}</span>
+        </div>
+    </section>
+    <div>
+        <el-button :disabled="!isSupported" @click="() => open()">
+            {{
+                isSupported
+                    ? 'Open Eye Dropper'
+                    : 'Not Supported by Your Browser'
+            }}
+        </el-button>
+    </div>
 </template>
 <style lang="scss" scoped>
 .title {
