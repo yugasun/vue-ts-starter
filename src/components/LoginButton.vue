@@ -50,11 +50,8 @@ function logoutConfirm() {
 
 <template>
     <div class="user-info">
-        <h2 v-if="userStore.isLogin" class="user">
-            Hello, {{ userStore.userInfo?.username }}
-        </h2>
-        <el-button v-else @click="showLoginDialog">Login</el-button>
         <el-button v-if="userStore.isLogin" @click="logout">Logout</el-button>
+        <el-button v-else @click="showLoginDialog">Login</el-button>
     </div>
 
     <!-- login dialog -->
@@ -101,9 +98,6 @@ function logoutConfirm() {
 </template>
 <style lang="scss" scoped>
 .user-info {
-    position: absolute;
-    right: 50px;
-    top: 12px;
     display: flex;
 
     .user {

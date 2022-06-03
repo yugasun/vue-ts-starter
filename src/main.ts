@@ -4,8 +4,11 @@ import ElementPlus from 'element-plus';
 import App from './App.vue';
 import store from './store';
 import router from './router';
+import { updateTheme } from './utils/theme';
 
 import '@/assets/styles/index.scss';
+// If you want to use ElMessage, import it.
+import 'element-plus/theme-chalk/src/message.scss';
 
 async function main() {
     // Start mock server
@@ -22,6 +25,8 @@ async function main() {
     app.use(ElementPlus);
 
     app.mount('#app');
+
+    updateTheme();
 }
 
 main();

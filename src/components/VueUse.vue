@@ -4,8 +4,12 @@ import { useMouse } from '@vueuse/core';
 const { x, y } = useMouse();
 </script>
 <template>
-    <h1 class="title">Test VueUse for Mouse Event</h1>
-    <h3>Mouse: {{ x }}, {{ y }}</h3>
+    <h1 class="title font-bold text-primary-dark dark:text-ternary-light">
+        Test VueUse for Mouse Event
+    </h1>
+    <h3 class="text-primary-dark dark:text-ternary-light">
+        Mouse: {{ x }}, {{ y }}
+    </h3>
 </template>
 <style lang="scss" scoped>
 .title {

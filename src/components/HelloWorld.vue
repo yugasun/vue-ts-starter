@@ -1,17 +1,21 @@
 <script setup lang="ts">
+import { useUserStore } from '@/store/user';
 import { ref } from 'vue';
-
-import UserInfo from './UserInfo.vue';
 
 defineProps<{ msg: string }>();
 
-const count = ref(0);
+const userStore = useUserStore();
 </script>
 
 <template>
-    <h1>{{ msg }}</h1>
-    <UserInfo />
-    <p>
+    <h1 class="text-primary-dark dark:text-ternary-light">{{ msg }}</h1>
+    <p
+        v-if="userStore.isLogin"
+        class="text-primary-dark dark:text-ternary-light"
+    >
+        Hello, {{ userStore.userInfo?.username }}
+    </p>
+    <p class="text-primary-dark dark:text-ternary-light">
         Recommended IDE setup:
         <a href="https://code.visualstudio.com/" target="_blank">VS Code</a>
         +
@@ -20,7 +24,10 @@ const count = ref(0);
         >
     </p>
 
-    <p>See <code>README.md</code> for more information.</p>
+    <p class="text-primary-dark dark:text-ternary-light">
+        See <code class="dark:text-ternary-dark">README.md</code> for more
+        information.
+    </p>
 </template>
 
 <style scoped>
@@ -37,6 +44,5 @@ code {
     background-color: #eee;
     padding: 2px 4px;
     border-radius: 4px;
-    color: #304455;
 }
 </style>

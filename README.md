@@ -18,6 +18,7 @@ Vue template for starter using Vue3 + TypeScript + Vite + Pinia 🚀
 -   [x] [Element Plus](https://github.com/element-plus/element-plus) 🎉 A Vue.js 3 UI Library made by Element team
 -   [x] [vueuse](https://github.com/vueuse/vueuse) Collection of essential Vue Composition Utilities for Vue 2 and 3
 -   [x] [axios](https://github.com/axios/axios) Promise based HTTP client for the browser and node.js
+-   [x] [Tailwindcss](https://tailwindcss.com/) A utility-first CSS framework for rapid UI development
 -   [x] [msw](https://mswjs.io/docs/) Seamless REST/GraphQL API mocking library for browser and Node.js.
 -   [x] [ESLint](https://eslint.org/)
 -   [x] [Prettier](https://prettier.io/)

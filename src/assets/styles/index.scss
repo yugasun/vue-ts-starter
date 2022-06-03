@@ -1,5 +1,10 @@
-@import './reset.scss';
+/* @tailwind base; */
+@import './reset';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
 
-a {
-    color: #42b983;
+a,
+a:active,
+a:visited {
+    color: var(--el-primary-color);
 }

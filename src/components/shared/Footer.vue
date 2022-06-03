@@ -1,7 +1,11 @@
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+import { ref } from 'vue';
+
+const year = ref(new Date().getFullYear());
+</script>
 <template>
-    <div class="footer">
-        @yugasun
+    <div class="footer text-primary-dark dark:text-ternary-light">
+        @{{ year }}
         <a href="https://github.com/yugasun/vue-template" target="_blank">
             Github
         </a>

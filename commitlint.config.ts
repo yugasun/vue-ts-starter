@@ -6,6 +6,7 @@ export default {
             'always',
             [
                 'feature',
+                'feat',
                 'bug',
                 'fix',
                 'ui',
