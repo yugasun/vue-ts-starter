@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { useUserStore } from '@/store/user';
-import { ref } from 'vue';
 
 defineProps<{ msg: string }>();
 

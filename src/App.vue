@@ -19,11 +19,11 @@ const timeAgo = useTimeAgo(date);
             <Header />
         </el-header>
         <el-main class="main">
-            <div>Built at: {{ date }} ({{ timeAgo }})</div>
-            <br />
             <RouterView />
             <br />
             <ServiceWorker />
+            <br />
+            <div>Built at: {{ date }} ({{ timeAgo }})</div>
         </el-main>
         <el-footer>
             <Footer />
