@@ -35,10 +35,10 @@ const close = async () => {
                 New content available, click on reload button to update.
             </span>
         </div>
-        <button v-if="needRefresh" @click="updateServiceWorker()">
+        <el-button v-if="needRefresh" @click="updateServiceWorker()">
             Reload
-        </button>
-        <button @click="close">Close</button>
+        </el-button>
+        <el-button @click="close">Close</el-button>
     </div>
 </template>
 
