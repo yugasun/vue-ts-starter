@@ -31,7 +31,7 @@ const userStore = useUserStore();
 
 <style scoped>
 a {
-    color: #42b983;
+    color: var(--link-color);
 }
 
 label {
