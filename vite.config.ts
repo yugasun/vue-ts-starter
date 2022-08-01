@@ -6,6 +6,7 @@ import { ElementPlusResolver } from 'unplugin-vue-components/resolvers';
 import * as path from 'path';
 import { ManifestOptions, VitePWA, VitePWAOptions } from 'vite-plugin-pwa';
 import replace from '@rollup/plugin-replace';
+import { createHtmlPlugin } from 'vite-plugin-html';
 
 const pwaOptions: Partial<VitePWAOptions> = {
     mode: 'development',
@@ -80,6 +81,17 @@ export default defineConfig({
     },
     plugins: [
         vue(),
+        createHtmlPlugin({
+            minify: true,
+            /**
+             * Data that needs to be injected into the index.html ejs template
+             */
+            inject: {
+                data: {
+                    title: 'vue-ts-starter',
+                },
+            },
+        }),
         AutoImport({
             resolvers: [ElementPlusResolver()],
         }),

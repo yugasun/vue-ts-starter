@@ -5,7 +5,6 @@ export default {
             2,
             'always',
             [
-                'feature',
                 'feat',
                 'bug',
                 'fix',

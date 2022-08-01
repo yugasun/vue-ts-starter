@@ -24,3 +24,6 @@ dist-ssr
 *.sw?
 
 public/mockServiceWorker.js
+
+auto-imports.d.ts
+components.d.ts
