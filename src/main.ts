@@ -14,7 +14,7 @@ async function main() {
     // Start mock server
     if (import.meta.env.DEV || import.meta.env.VITE_IS_VERCEL) {
         const { worker } = await import('./mocks/index');
-        worker.start();
+        worker.start({ onUnhandledRequest: 'bypass' });
     }
 
     const app = createApp(App);
