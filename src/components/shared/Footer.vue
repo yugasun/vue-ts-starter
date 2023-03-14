@@ -1,5 +1,8 @@
 <script lang="ts" setup>
 import { ref } from 'vue';
+import { useI18n } from 'vue-i18n';
+
+const { t } = useI18n();
 
 const year = ref(new Date().getFullYear());
 </script>
@@ -19,14 +22,14 @@ const year = ref(new Date().getFullYear());
             href="https://vitejs.dev/guide/features.html"
             target="_blank"
         >
-            Vite Docs
+            Vite {{ t('common.docs') }}
         </a>
         <span class="p-2"> | </span>
         <a
             class="link__item underline"
             href="https://v3.vuejs.org/"
             target="_blank"
-            >Vue 3 Docs</a
+            >Vue3 {{ t('common.docs') }}</a
         >
     </div>
 </template>

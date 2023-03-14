@@ -7,6 +7,8 @@ import * as path from 'path';
 import { ManifestOptions, VitePWA, VitePWAOptions } from 'vite-plugin-pwa';
 import replace from '@rollup/plugin-replace';
 import { createHtmlPlugin } from 'vite-plugin-html';
+import VueI18n from '@intlify/unplugin-vue-i18n/vite';
+import Unocss from 'unocss/vite';
 
 const pwaOptions: Partial<VitePWAOptions> = {
     mode: 'development',
@@ -43,10 +45,6 @@ const pwaOptions: Partial<VitePWAOptions> = {
     },
 };
 
-const replaceOptions = {
-    __DATE__: new Date().toISOString(),
-    __RELOAD_SW__: '',
-};
 const claims = process.env.CLAIMS === 'true';
 const reload = process.env.RELOAD_SW === 'true';
 
@@ -60,10 +58,6 @@ if (process.env.SW === 'true') {
 }
 
 if (claims) pwaOptions.registerType = 'autoUpdate';
-
-if (reload) {
-    replaceOptions.__RELOAD_SW__ = 'true';
-}
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -93,13 +87,39 @@ export default defineConfig({
             },
         }),
         AutoImport({
+            imports: [
+                'vue',
+                'vue-router',
+                'vue-i18n',
+                'vue/macros',
+                '@vueuse/head',
+                '@vueuse/core',
+            ],
             resolvers: [ElementPlusResolver()],
         }),
         Components({
             resolvers: [ElementPlusResolver()],
         }),
+
+        // https://github.com/antfu/unocss
+        // see unocss.config.ts for config
+        Unocss(),
+
         VitePWA(pwaOptions),
-        replace(replaceOptions),
+
+        // https://github.com/intlify/bundle-tools/tree/main/packages/unplugin-vue-i18n
+        VueI18n({
+            runtimeOnly: true,
+            compositionOnly: true,
+            fullInstall: true,
+            include: [path.resolve(__dirname, 'locales/**')],
+        }),
+
+        replace({
+            preventAssignment: true,
+            __DATE__: new Date().toISOString(),
+            __RELOAD_SW__: reload ? 'true' : '',
+        }),
     ],
     server: {
         port: 8080,

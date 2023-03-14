@@ -4,9 +4,10 @@
 [![TypeScript](https://img.shields.io/badge/Language-TypeScript-blue)](https://www.typescriptlang.org/)
 [![Vite](https://img.shields.io/badge/Develop-Vite-747bff)](https://vitejs.dev)
 [![Pinia](https://img.shields.io/badge/Store-Pinia-f7d336)](https://pinia.vuejs.org)
+[![Unocss](https://img.shields.io/badge/CSS-Unocss-858585)](https://uno.antfu.me/)
 [![Build](https://github.com/yugasun/vue-template/actions/workflows/deploy.yml/badge.svg?branch=main)](https://github.com/yugasun/vue-template/actions/workflows/deploy.yml)
 
-Vue template for starter using Vue3 + TypeScript + Vite + Pinia 🚀
+Vue template for starter using Vue3 + TypeScript + Vite + Pinia + Unocss 🚀
 
 ## Feature
 
@@ -19,7 +20,9 @@ Vue template for starter using Vue3 + TypeScript + Vite + Pinia 🚀
 -   [x] [Element Plus](https://github.com/element-plus/element-plus) 🎉 A Vue.js 3 UI Library made by Element team
 -   [x] [vueuse](https://github.com/vueuse/vueuse) Collection of essential Vue Composition Utilities for Vue 2 and 3
 -   [x] [axios](https://github.com/axios/axios) Promise based HTTP client for the browser and node.js
--   [x] [Tailwindcss](https://tailwindcss.com/) A utility-first CSS framework for rapid UI development
+-   [x] 🎨 [UnoCSS](https://github.com/antfu/unocss) - the instant on-demand atomic CSS engine
+-   [x] 😃 [Use icons from any icon sets with classes](https://github.com/antfu/unocss/tree/main/packages/preset-icons)
+-   [x] 🌍 [I18n ready](https://vue-i18n.intlify.dev/) Vue I18n Internationalization plugin for Vue.js
 -   [x] [msw](https://mswjs.io/docs/) Seamless REST/GraphQL API mocking library for browser and Node.js.
 -   [x] [ESLint](https://eslint.org/)
 -   [x] [Prettier](https://prettier.io/)

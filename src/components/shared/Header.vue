@@ -1,7 +1,11 @@
 <script lang="ts" setup>
+import { useI18n } from 'vue-i18n';
 import LoginButton from '../LoginButton.vue';
 import ThemeSwitcher from '../ThemeSwitcher.vue';
+import LangSwitcher from '../LangSwitcher.vue';
 import Menu from '../Menu.vue';
+
+const { t } = useI18n();
 </script>
 <template>
     <nav class="header-nav flex flex-row justify-center items-center">
@@ -19,10 +23,11 @@ import Menu from '../Menu.vue';
         <h3
             class="title text-3xl font-medium text-primary-dark dark:text-ternary-light hidden sm:block"
         >
-            Vue3 + TypeScript + Vite Template
+            Vue3 + TypeScript + Vite {{ t('common.template') }}
         </h3>
         <div class="nav-right flex flex-row justify-between items-center">
             <LoginButton />
+            <LangSwitcher class="switch-icon" />
             <ThemeSwitcher class="switch-icon" />
         </div>
     </nav>

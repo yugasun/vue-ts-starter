@@ -30,7 +30,11 @@
       ]
     },
     "types": [
-      "element-plus/global"
+      "element-plus/global",
+      "vite/client",
+      "vue/ref-macros",
+      "vite-plugin-pwa/client",
+      "unplugin-vue-macros/macros-global"
     ]
   },
   "include": [

@@ -1,8 +1,10 @@
 <script setup lang="ts">
+import { useI18n } from 'vue-i18n';
 import { useUserStore } from '@/store/user';
 
 defineProps<{ msg: string }>();
 
+const { t } = useI18n();
 const userStore = useUserStore();
 </script>
 
@@ -12,10 +14,14 @@ const userStore = useUserStore();
         v-if="userStore.isLogin"
         class="text-primary-dark dark:text-ternary-light"
     >
-        Hello, {{ userStore.userInfo?.username }}
+        {{
+            t('common.welcome', {
+                name: userStore.userInfo?.username,
+            })
+        }}
     </p>
     <p class="text-primary-dark dark:text-ternary-light">
-        Recommended IDE setup:
+        {{ t('home.recommendIde') }}:
         <a href="https://code.visualstudio.com/" target="_blank">VS Code</a>
         +
         <a href="https://github.com/johnsoncodehk/volar" target="_blank"
@@ -23,10 +29,10 @@ const userStore = useUserStore();
         >
     </p>
 
-    <p class="text-primary-dark dark:text-ternary-light">
-        See <code class="dark:text-ternary-dark">README.md</code> for more
-        information.
-    </p>
+    <p
+        class="text-primary-dark dark:text-ternary-light"
+        v-html="t('home.remarks')"
+    ></p>
 </template>
 
 <style scoped>
