@@ -15,8 +15,6 @@ const messages = Object.fromEntries(
     }),
 );
 
-console.log('messages', messages);
-
 const i18n = createI18n({
     legacy: false,
     locale: 'en',
