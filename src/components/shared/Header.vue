@@ -1,9 +1,5 @@
 <script lang="ts" setup>
 import { useI18n } from 'vue-i18n';
-import LoginButton from '../LoginButton.vue';
-import ThemeSwitcher from '../ThemeSwitcher.vue';
-import LangSwitcher from '../LangSwitcher.vue';
-import Menu from '../Menu.vue';
 
 const { t } = useI18n();
 </script>
@@ -17,8 +13,6 @@ const { t } = useI18n();
                     class="logo"
                 />
             </router-link>
-
-            <Menu />
         </div>
         <h3
             class="title text-3xl font-medium text-primary-dark dark:text-ternary-light hidden sm:block"
@@ -26,9 +20,7 @@ const { t } = useI18n();
             Vue3 + TypeScript + Vite {{ t('common.template') }}
         </h3>
         <div class="nav-right flex flex-row justify-between items-center">
-            <LoginButton />
-            <LangSwitcher class="switch-icon" />
-            <ThemeSwitcher class="switch-icon" />
+            Nav Right
         </div>
     </nav>
 </template>

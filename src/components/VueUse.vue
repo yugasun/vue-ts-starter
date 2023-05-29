@@ -25,7 +25,7 @@ watchEffect(() => (mode.value = state.value as any));
         <h3 class="title font-bold">
             VueUse {{ t('common.example') }}: ColorMode
         </h3>
-        <el-button type="primary" @click="next()">
+        <button @click="next()">
             <i
                 v-if="state === 'dark'"
                 i-carbon-moon
@@ -63,7 +63,7 @@ watchEffect(() => (mode.value = state.value as any));
             />
 
             <span class="ml-2 capitalize">{{ mode }}</span>
-        </el-button>
+        </button>
     </section>
 </template>
 <style lang="scss">
