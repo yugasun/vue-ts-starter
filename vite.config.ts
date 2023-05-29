@@ -111,6 +111,9 @@ export default defineConfig({
         VueI18n({
             runtimeOnly: true,
             compositionOnly: true,
+            /* eslint-disable-next-line @typescript-eslint/ban-ts-comment */
+            // @ts-ignore
+            strictMessage: false,
             fullInstall: true,
             include: [path.resolve(__dirname, 'locales/**')],
         }),
