@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+import { watchEffect } from 'vue';
 import { useI18n } from 'vue-i18n';
 import { useColorMode, useCycleList } from '@vueuse/core';
 
