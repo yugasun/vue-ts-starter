@@ -10,9 +10,14 @@ const mode = useColorMode({
         cafe: 'cafe',
     },
 });
-const { next } = useCycleList(['dark', 'light', 'cafe', 'contrast', 'auto'], {
-    initialValue: mode,
-});
+const { next, state } = useCycleList(
+    ['dark', 'light', 'cafe', 'contrast', 'auto'],
+    {
+        initialValue: mode,
+    },
+);
+
+watchEffect(() => (mode.value = state.value as any));
 </script>
 <template>
     <section class="vueuse-box p-5 text-primary-dark dark:text-ternary-light">
@@ -21,35 +26,35 @@ const { next } = useCycleList(['dark', 'light', 'cafe', 'contrast', 'auto'], {
         </h3>
         <el-button type="primary" @click="next()">
             <i
-                v-if="mode === 'dark'"
+                v-if="state === 'dark'"
                 i-carbon-moon
                 inline-block
                 align-middle
                 class="align-middle"
             />
             <i
-                v-if="mode === 'light'"
+                v-if="state === 'light'"
                 i-carbon-sun
                 inline-block
                 align-middle
                 class="align-middle"
             />
             <i
-                v-if="mode === 'cafe'"
+                v-if="state === 'cafe'"
                 i-carbon-cafe
                 inline-block
                 align-middle
                 class="align-middle"
             />
             <i
-                v-if="mode === 'contrast'"
+                v-if="state === 'contrast'"
                 i-carbon-contrast
                 inline-block
                 align-middle
                 class="align-middle"
             />
             <i
-                v-if="mode === 'auto'"
+                v-if="state === 'auto'"
                 i-carbon-laptop
                 inline-block
                 align-middle
@@ -68,6 +73,7 @@ const { next } = useCycleList(['dark', 'light', 'cafe', 'contrast', 'auto'], {
 html.cafe {
     filter: sepia(0.9) hue-rotate(315deg) brightness(0.9);
 }
+
 html.contrast {
     filter: contrast(2);
 }
