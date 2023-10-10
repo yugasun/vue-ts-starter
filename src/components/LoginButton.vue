@@ -51,11 +51,13 @@ function logoutConfirm() {
 <template>
     <div class="user-info">
         <el-button v-if="userStore.isLogin" @click="logout">Logout</el-button>
-        <el-button v-else @click="showLoginDialog">Login</el-button>
+        <el-button v-else id="login-btn" @click="showLoginDialog">
+            Login
+        </el-button>
     </div>
 
     <!-- login dialog -->
-    <el-dialog v-model="isLoginDialogVisible" title="Login">
+    <el-dialog id="login-dialog" v-model="isLoginDialogVisible" title="Login">
         <el-form :model="formData">
             <el-form-item label="Username">
                 <el-input v-model="formData.username" autocomplete="off" />
@@ -71,12 +73,12 @@ function logoutConfirm() {
         </el-form>
         <template #footer>
             <span class="dialog-footer">
-                <el-button @click="isLoginDialogVisible = false"
-                    >Cancel</el-button
-                >
-                <el-button type="primary" @click="submitLogin"
-                    >Confirm</el-button
-                >
+                <el-button @click="isLoginDialogVisible = false">
+                    Cancel
+                </el-button>
+                <el-button type="primary" @click="submitLogin">
+                    Confirm
+                </el-button>
             </span>
         </template>
     </el-dialog>

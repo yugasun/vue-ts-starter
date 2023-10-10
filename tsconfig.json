@@ -30,6 +30,7 @@
       ]
     },
     "types": [
+      "vitest",
       "element-plus/global",
       "vite/client",
       "vue/ref-macros",

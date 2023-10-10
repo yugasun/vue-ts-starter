@@ -1,3 +1,4 @@
+/// <reference types="vitest" />
 import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
 import AutoImport from 'unplugin-auto-import/vite';
@@ -132,6 +133,17 @@ export default defineConfig({
         hmr: {
             host: '127.0.0.1',
             port: 8080,
+        },
+    },
+
+    // https://github.com/vitest-dev/vitest
+    test: {
+        include: ['src/tests/**/*.test.ts'],
+        environment: 'jsdom',
+        server: {
+            deps: {
+                inline: ['@vue', '@vueuse', 'element-plus', 'pinia'],
+            },
         },
     },
 });
