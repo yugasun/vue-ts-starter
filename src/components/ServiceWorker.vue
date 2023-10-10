@@ -27,9 +27,9 @@ onBeforeMount(() => {
 </script>
 <template>
     <p class="sw-btns">
-        <el-button @click="runWorker">Ping Web Worker</el-button>
+        <a-button @click="runWorker">Ping Web Worker</a-button>
         &#160;&#160;
-        <el-button @click="resetMessage">Reset Message</el-button>
+        <a-button @click="resetMessage">Reset Message</a-button>
     </p>
 
     <p v-if="pong" class="sw-msg">

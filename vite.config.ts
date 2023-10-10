@@ -2,7 +2,7 @@ import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
 import AutoImport from 'unplugin-auto-import/vite';
 import Components from 'unplugin-vue-components/vite';
-import { ElementPlusResolver } from 'unplugin-vue-components/resolvers';
+import { AntDesignVueResolver } from 'unplugin-vue-components/resolvers';
 import * as path from 'path';
 import { ManifestOptions, VitePWA, VitePWAOptions } from 'vite-plugin-pwa';
 import replace from '@rollup/plugin-replace';
@@ -68,9 +68,7 @@ export default defineConfig({
     },
     css: {
         preprocessorOptions: {
-            scss: {
-                additionalData: `@use "@/assets/styles/element/index.scss" as *;`,
-            },
+            scss: {},
         },
     },
     plugins: [
@@ -95,13 +93,17 @@ export default defineConfig({
                 '@vueuse/head',
                 '@vueuse/core',
             ],
-            resolvers: [ElementPlusResolver()],
+            resolvers: [AntDesignVueResolver()],
             dts: 'src/auto-imports.d.ts',
             vueTemplate: true,
         }),
         Components({
             dts: 'src/components.d.ts',
-            resolvers: [ElementPlusResolver()],
+            resolvers: [
+                AntDesignVueResolver({
+                    importStyle: false, // css in js
+                }),
+            ],
         }),
 
         // https://github.com/antfu/unocss

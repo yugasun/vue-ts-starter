@@ -20,9 +20,7 @@ const { t } = useI18n();
 
             <Menu />
         </div>
-        <h3
-            class="title text-3xl font-medium text-primary-dark dark:text-ternary-light hidden sm:block"
-        >
+        <h3 class="title text-3xl font-medium hidden sm:block">
             Vue3 + TypeScript + Vite {{ t('common.template') }}
         </h3>
         <div class="nav-right flex flex-row justify-between items-center">

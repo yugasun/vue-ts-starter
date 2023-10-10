@@ -30,7 +30,7 @@
       ]
     },
     "types": [
-      "element-plus/global",
+      "ant-design-vue/typings/global",
       "vite/client",
       "vue/ref-macros",
       "vite-plugin-pwa/client",

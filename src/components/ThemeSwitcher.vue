@@ -1,8 +1,5 @@
 <script lang="ts" setup>
-// import { computed } from 'vue';
 import { isDark, toggleDark } from '@/composables';
-
-import { Sunny, Moon } from '@element-plus/icons-vue';
 
 function toggleTheme() {
     toggleDark();
@@ -10,10 +7,7 @@ function toggleTheme() {
 </script>
 
 <template>
-    <el-button
-        :type="!isDark ? 'info' : 'default'"
-        :icon="!isDark ? Moon : Sunny"
-        :circle="true"
-        @click.prevent="toggleTheme"
-    />
+    <a-button type="text" shape="circle" @click.prevent="toggleTheme">
+        <span :class="isDark ? 'i-carbon-sun' : 'i-carbon-moon'" />
+    </a-button>
 </template>

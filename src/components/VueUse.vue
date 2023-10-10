@@ -21,11 +21,11 @@ const { next, state } = useCycleList(
 watchEffect(() => (mode.value = state.value as any));
 </script>
 <template>
-    <section class="vueuse-box p-5 text-primary-dark dark:text-ternary-light">
+    <section class="vueuse-box p-5 text-primary-dark dark:text-light">
         <h3 class="title font-bold">
             VueUse {{ t('common.example') }}: ColorMode
         </h3>
-        <el-button type="primary" @click="next()">
+        <a-button type="primary" @click="next()">
             <i
                 v-if="state === 'dark'"
                 i-carbon-moon
@@ -63,7 +63,7 @@ watchEffect(() => (mode.value = state.value as any));
             />
 
             <span class="ml-2 capitalize">{{ mode }}</span>
-        </el-button>
+        </a-button>
     </section>
 </template>
 <style lang="scss">

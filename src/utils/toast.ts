@@ -1,7 +1,5 @@
-import 'element-plus/es/components/message/style/css';
+import { message, type MessageArgsProps } from 'ant-design-vue';
 
-import { ElMessage, MessageParams } from 'element-plus';
-
-export function toast(options: MessageParams) {
-    ElMessage(options);
+export function toast(options: MessageArgsProps) {
+    message.open(options);
 }

@@ -1,35 +1,30 @@
 <script lang="ts" setup>
-import {
-    Menu as IconMenu,
-    HomeFilled,
-    ArrowDown,
-} from '@element-plus/icons-vue';
+import { DownOutlined, MenuOutlined, HomeFilled } from '@ant-design/icons-vue';
 </script>
 <template>
-    <el-dropdown class="menu-list">
+    <a-dropdown class="menu-list">
         <span
-            class="el-dropdown-link cursor-pointer text-lg font-medium text-primary-dark dark:text-ternary-light"
+            class="ant-dropdown-link cursor-pointer text-lg font-medium text-primary-dark dark:text-light"
         >
             Menus
-            <el-icon class="el-icon--right">
-                <arrow-down />
-            </el-icon>
+            <DownOutlined />
         </span>
-        <template #dropdown>
-            <el-dropdown-menu class="w-100">
-                <router-link class="menu-item" to="/">
-                    <el-dropdown-item :icon="HomeFilled">
-                        Home
-                    </el-dropdown-item>
-                </router-link>
-                <router-link class="menu-item" to="/detail">
-                    <el-dropdown-item :icon="IconMenu">
+        <template #overlay>
+            <a-menu>
+                <a-menu-item>
+                    <router-link class="menu-item" to="/">
+                        <HomeFilled /> Home
+                    </router-link>
+                </a-menu-item>
+                <a-menu-item>
+                    <router-link class="menu-item" to="/detail">
+                        <MenuOutlined />
                         Detail
-                    </el-dropdown-item>
-                </router-link>
-            </el-dropdown-menu>
+                    </router-link>
+                </a-menu-item>
+            </a-menu>
         </template>
-    </el-dropdown>
+    </a-dropdown>
 </template>
 <style lang="scss">
 .menu-list {

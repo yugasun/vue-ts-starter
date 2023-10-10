@@ -7,7 +7,7 @@ const { t } = useI18n();
 const year = ref(new Date().getFullYear());
 </script>
 <template>
-    <div class="footer text-primary-dark dark:text-ternary-light">
+    <div class="footer">
         @{{ year }}
         <a
             class="link__item underline"

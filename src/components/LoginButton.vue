@@ -24,7 +24,7 @@ async function submitLogin() {
     if (res.code === 0) {
         toast({
             type: 'success',
-            message: 'Login success',
+            content: 'Login success',
         });
         const userRes = await API.getUser();
         userStore.updateUser(userRes.data);
@@ -33,7 +33,7 @@ async function submitLogin() {
     } else {
         toast({
             type: 'error',
-            message: 'Login Fail',
+            content: 'Login Fail',
         });
     }
 }
@@ -50,51 +50,49 @@ function logoutConfirm() {
 
 <template>
     <div class="user-info">
-        <el-button v-if="userStore.isLogin" @click="logout">Logout</el-button>
-        <el-button v-else @click="showLoginDialog">Login</el-button>
+        <a-button v-if="userStore.isLogin" @click="logout">Logout</a-button>
+        <a-button v-else @click="showLoginDialog">Login</a-button>
     </div>
 
     <!-- login dialog -->
-    <el-dialog v-model="isLoginDialogVisible" title="Login">
-        <el-form :model="formData">
-            <el-form-item label="Username">
-                <el-input v-model="formData.username" autocomplete="off" />
-            </el-form-item>
-            <el-form-item label="Password">
-                <el-input
-                    v-model="formData.password"
+    <a-modal v-model:open="isLoginDialogVisible" title="Login">
+        <a-form :model="formData">
+            <a-form-item label="Username">
+                <a-input v-model:value="formData.username" autocomplete="off" />
+            </a-form-item>
+            <a-form-item label="Password">
+                <a-input
+                    v-model:value="formData.password"
                     autocomplete="off"
                     type="password"
                     show-password
                 />
-            </el-form-item>
-        </el-form>
+            </a-form-item>
+        </a-form>
         <template #footer>
             <span class="dialog-footer">
-                <el-button @click="isLoginDialogVisible = false"
-                    >Cancel</el-button
+                <a-button @click="isLoginDialogVisible = false"
+                    >Cancel</a-button
                 >
-                <el-button type="primary" @click="submitLogin"
-                    >Confirm</el-button
-                >
+                <a-button type="primary" @click="submitLogin">Confirm</a-button>
             </span>
         </template>
-    </el-dialog>
+    </a-modal>
 
     <!-- logout dialog -->
-    <el-dialog v-model="isLogoutDialogVisible" title="Logout">
+    <a-modal v-model:open="isLogoutDialogVisible" title="Logout">
         <span>Do you confirm to logout?</span>
         <template #footer>
             <span class="dialog-footer">
-                <el-button @click="isLogoutDialogVisible = false"
-                    >Cancel</el-button
+                <a-button @click="isLogoutDialogVisible = false"
+                    >Cancel</a-button
                 >
-                <el-button type="primary" @click="logoutConfirm"
-                    >Confirm</el-button
+                <a-button type="primary" @click="logoutConfirm"
+                    >Confirm</a-button
                 >
             </span>
         </template>
-    </el-dialog>
+    </a-modal>
 </template>
 <style lang="scss" scoped>
 .user-info {

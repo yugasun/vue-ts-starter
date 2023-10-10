@@ -14,4 +14,4 @@ common:
 
 home:
     recommendIde: 'Recommended IDE setup'
-    remarks: 'See <code class="dark:text-ternary-dark">README.md</code> for more information.'
+    remarks: 'See <code class="dark:text-dark">README.md</code> for more information.'

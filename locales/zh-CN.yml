@@ -14,4 +14,4 @@ common:
 
 home:
     recommendIde: '推荐使用的编辑器配置'
-    remarks: '阅读 <code class="dark:text-ternary-dark">README.md</code> 获得更多信息。'
+    remarks: '阅读 <code class="dark:text-dark">README.md</code> 获得更多信息。'

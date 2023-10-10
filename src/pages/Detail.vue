@@ -22,7 +22,7 @@ function goBack() {
             })
         }}
     </p>
-    <!-- <el-button @click="goBack">Back</el-button> -->
+    <a-button class="m-2" @click="goBack">Back</a-button>
 </template>
 
 <style lang="scss" scoped>

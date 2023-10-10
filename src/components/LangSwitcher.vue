@@ -12,7 +12,7 @@ function toggleLocales() {
 </script>
 
 <template>
-    <el-button :circle="true" @click.prevent="toggleLocales">
-        <div i-carbon-language />
-    </el-button>
+    <a-button type="text" shape="circle" @click.prevent="toggleLocales">
+        <span i-carbon-language />
+    </a-button>
 </template>
