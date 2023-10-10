@@ -7,6 +7,7 @@ import { useUserStore } from '@/store/user';
 
 const userStore = useUserStore();
 
+const loginRef = ref();
 const isLoginDialogVisible = ref(false);
 const isLogoutDialogVisible = ref(false);
 const formData = ref({
@@ -46,16 +47,25 @@ function logoutConfirm() {
     userStore.updateUser(null);
     isLogoutDialogVisible.value = false;
 }
+
+const loginContainer = () => loginRef.value || document.body;
 </script>
 
 <template>
-    <div class="user-info">
+    <div ref="loginRef" class="user-info">
         <a-button v-if="userStore.isLogin" @click="logout">Logout</a-button>
-        <a-button v-else @click="showLoginDialog">Login</a-button>
+        <a-button v-else id="login-btn" @click="showLoginDialog">
+            Login
+        </a-button>
     </div>
 
     <!-- login dialog -->
-    <a-modal v-model:open="isLoginDialogVisible" title="Login">
+    <a-modal
+        v-model:open="isLoginDialogVisible"
+        wrap-class-name="login-dialog"
+        title="Login"
+        :get-container="loginContainer"
+    >
         <a-form :model="formData">
             <a-form-item label="Username">
                 <a-input v-model:value="formData.username" autocomplete="off" />
