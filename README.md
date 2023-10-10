@@ -17,9 +17,9 @@ Vue template for starter using Vue3 + TypeScript + Vite + Pinia + Unocss 🚀
 -   [x] [Vite](https://vitejs.dev/) Next Generation Frontend Tooling
 -   [x] [vite-plugin-pwa](https://github.com/antfu/vite-plugin-pwa) Zero-config PWA for Vite
 -   [x] [Pinia](https://pinia.vuejs.org/) The Vue Store that you will enjoy using
--   [x] [Vitest](https://github.com/vitest-dev/vitest) ⚙️ Unit Testing with Vitest
--   [x] [Element Plus](https://github.com/element-plus/element-plus) 🎉 A Vue.js 3 UI Library made by Element team
--   [x] [Ant Design Vue](https://github.com/vueComponent/ant-design-vue) 🌈 An enterprise-class UI components based on Ant Design and Vue. 🐜
+-   [x] ⚙️ [Vitest](https://github.com/vitest-dev/vitest) Unit Testing with Vitest
+-   [x] 🎉 [Element Plus](https://github.com/element-plus/element-plus) A Vue.js 3 UI Library made by Element team
+-   [x] 🌈 [Ant Design Vue](https://github.com/vueComponent/ant-design-vue) An enterprise-class UI components based on Ant Design and Vue. 🐜
 -   [x] [vueuse](https://github.com/vueuse/vueuse) Collection of essential Vue Composition Utilities for Vue 2 and 3
 -   [x] [axios](https://github.com/axios/axios) Promise based HTTP client for the browser and node.js
 -   [x] 🎨 [UnoCSS](https://github.com/antfu/unocss) - the instant on-demand atomic CSS engine
