@@ -8,7 +8,7 @@ import {
 <template>
     <el-dropdown class="menu-list">
         <span
-            class="el-dropdown-link cursor-pointer text-lg font-medium text-primary-dark dark:text-ternary-light"
+            class="el-dropdown-link cursor-pointer text-lg font-medium text-dark dark:text-light"
         >
             Menus
             <el-icon class="el-icon--right">

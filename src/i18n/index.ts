@@ -2,14 +2,19 @@ import { createI18n } from 'vue-i18n';
 
 // Import i18n resources
 // https://vitejs.dev/guide/features.html#glob-import
-//
-// Don't need this? Try vitesse-lite: https://github.com/antfu/vitesse-lite
 const messages = Object.fromEntries(
     Object.entries(
-        import.meta.glob<{ default: any }>('../../locales/*.y(a)?ml', {
-            eager: true,
-        }),
+        // glob yaml/yml/ts files
+        import.meta.glob<{ default: any }>(
+            '../../locales/*.{yaml,yml,ts,json}',
+            {
+                eager: true,
+            },
+        ),
     ).map(([key, value]) => {
+        if (key.endsWith('.ts')) {
+            return [key.slice(14, -3), value.default];
+        }
         const yaml = key.endsWith('.yaml');
         return [key.slice(14, yaml ? -5 : -4), value.default];
     }),
