@@ -7,6 +7,7 @@ import { i18n } from './i18n';
 import { updateTheme } from './utils/theme';
 
 import 'uno.css';
+import '@unocss/reset/tailwind.css';
 import '@/assets/styles/index.scss';
 // If you want to use ElMessage, import it.
 

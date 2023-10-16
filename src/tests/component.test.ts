@@ -2,10 +2,10 @@ import { mount } from '@vue/test-utils';
 import { describe, expect, it, vi, beforeEach } from 'vitest';
 import { createTestingPinia } from '@pinia/testing';
 
-import LoginButton from '../components/LoginButton.vue';
+import HelloWorld from '../components/HelloWorld.vue';
 import { createPinia, setActivePinia } from 'pinia';
 
-describe('LoginButton', () => {
+describe('HelloWorld', () => {
     beforeEach(() => {
         // creates a fresh pinia and make it active so it's automatically picked
         // up by any useStore() call without having to pass it to it:
@@ -13,7 +13,10 @@ describe('LoginButton', () => {
         setActivePinia(createPinia());
     });
     it('should render', () => {
-        const wrapper = mount(LoginButton, {
+        const wrapper = mount(HelloWorld, {
+            props: {
+                msg: 'Hello World',
+            },
             global: {
                 plugins: [
                     createTestingPinia({
@@ -22,20 +25,9 @@ describe('LoginButton', () => {
                 ],
             },
         });
-        expect(wrapper.text()).toContain('Login');
-    });
+        console.log('+++++++++++');
+        console.log('wrapper.text()', wrapper.text());
 
-    it('should be interactive', async () => {
-        const wrapper = mount(LoginButton, {
-            global: {
-                plugins: [
-                    createTestingPinia({
-                        createSpy: vi.fn,
-                    }),
-                ],
-            },
-        });
-        await wrapper.get('#login-btn').trigger('click');
-        expect(wrapper.get('#login-dialog').isVisible()).toBe(true);
+        expect(wrapper.text()).toContain('Hello World');
     });
 });

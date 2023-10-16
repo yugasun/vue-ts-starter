@@ -139,7 +139,7 @@ export default defineConfig({
         environment: 'jsdom',
         server: {
             deps: {
-                inline: ['@vue', '@vueuse', 'element-plus', 'pinia'],
+                inline: ['@vue', '@vueuse', 'pinia'],
             },
         },
     },
