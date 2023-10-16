@@ -122,7 +122,8 @@ export default defineConfig({
             // @ts-ignore
             strictMessage: false,
             fullInstall: true,
-            include: [path.resolve(__dirname, 'locales/**')],
+            // do not support ts extension
+            include: [path.resolve(__dirname, 'locales/*.{yaml,yml,json}')],
         }),
 
         replace({

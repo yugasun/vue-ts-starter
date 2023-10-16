@@ -21,7 +21,7 @@ const { next, state } = useCycleList(
 watchEffect(() => (mode.value = state.value as any));
 </script>
 <template>
-    <section class="vueuse-box p-5 text-primary-dark dark:text-light">
+    <section class="vueuse-box p-5 text-dark dark:text-light">
         <h3 class="title font-bold">
             VueUse {{ t('common.example') }}: ColorMode
         </h3>

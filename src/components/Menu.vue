@@ -4,7 +4,7 @@ import { DownOutlined, MenuOutlined, HomeFilled } from '@ant-design/icons-vue';
 <template>
     <a-dropdown class="menu-list">
         <span
-            class="ant-dropdown-link cursor-pointer text-lg font-medium text-primary-dark dark:text-light"
+            class="ant-dropdown-link cursor-pointer text-lg font-medium text-dark dark:text-light"
         >
             Menus
             <DownOutlined />
