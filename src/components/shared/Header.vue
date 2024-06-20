@@ -40,8 +40,8 @@ const { t } = useI18n();
 
 .nav-left {
     position: absolute;
-    left: 20px;
     top: 12px;
+    left: 20px;
 }
 
 .logo {
@@ -55,13 +55,13 @@ const { t } = useI18n();
 
 .nav-right {
     position: absolute;
-    right: 20px;
     top: 12px;
+    right: 20px;
 }
 
 .title {
-    line-height: 60px;
     font-weight: bold;
+    line-height: 60px;
 
     &.title-sm {
         font-size: 12px;

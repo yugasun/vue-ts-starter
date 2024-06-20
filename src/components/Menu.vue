@@ -33,9 +33,9 @@ import {
 </template>
 <style lang="scss">
 .menu-list {
-    background: none;
     width: 130px;
     margin-left: 20px;
+    background: none;
 
     .menu-item {
         width: 100px;

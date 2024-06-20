@@ -22,6 +22,8 @@ dist-ssr
 *.sln
 *.sw?
 
+.turbo
+
 public/mockServiceWorker.js
 
 auto-imports.d.ts

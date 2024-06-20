@@ -30,19 +30,16 @@
       ]
     },
     "types": [
-      "vitest",
-      "element-plus/global",
       "vite/client",
-      "vue/ref-macros",
-      "vite-plugin-pwa/client",
-      "unplugin-vue-macros/macros-global"
     ]
   },
   "include": [
     "src/**/*.ts",
     "src/**/*.d.ts",
     "src/**/*.tsx",
-    "src/**/*.vue"
+    "src/**/*.vue",
+    "components.d.ts",
+    "auto-imports.d.ts",
   ],
   "references": [
     {

@@ -35,8 +35,8 @@ const year = ref(new Date().getFullYear());
 </template>
 <style lang="scss" scoped>
 .footer {
-    line-height: 60px;
     font-size: 16px;
+    line-height: 60px;
 
     .link__item {
         color: var(--link-color);

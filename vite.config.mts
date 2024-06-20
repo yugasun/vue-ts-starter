@@ -7,9 +7,9 @@ import { ElementPlusResolver } from 'unplugin-vue-components/resolvers';
 import * as path from 'path';
 import { ManifestOptions, VitePWA, VitePWAOptions } from 'vite-plugin-pwa';
 import replace from '@rollup/plugin-replace';
-import { createHtmlPlugin } from 'vite-plugin-html';
 import VueI18n from '@intlify/unplugin-vue-i18n/vite';
 import Unocss from 'unocss/vite';
+import VueDevTools from 'vite-plugin-vue-devtools';
 
 const pwaOptions: Partial<VitePWAOptions> = {
     mode: 'development',
@@ -67,6 +67,20 @@ export default defineConfig({
             '@': path.resolve(__dirname, 'src'),
         },
     },
+    build: {
+        target: 'es2015',
+        cssTarget: 'chrome80',
+        rollupOptions: {
+            output: {
+                // 入口文件名（不能变，否则所有打包的 js hash 值全变了）
+                entryFileNames: 'index.js',
+                manualChunks: {
+                    vue: ['vue', 'pinia', 'vue-router'],
+                    elementplus: ['element-plus', '@element-plus/icons-vue'],
+                },
+            },
+        },
+    },
     css: {
         preprocessorOptions: {
             scss: {
@@ -76,17 +90,6 @@ export default defineConfig({
     },
     plugins: [
         vue(),
-        createHtmlPlugin({
-            minify: true,
-            /**
-             * Data that needs to be injected into the index.html ejs template
-             */
-            inject: {
-                data: {
-                    title: 'vue-ts-starter',
-                },
-            },
-        }),
         AutoImport({
             imports: [
                 'vue',
@@ -97,11 +100,11 @@ export default defineConfig({
                 '@vueuse/core',
             ],
             resolvers: [ElementPlusResolver()],
-            dts: 'src/auto-imports.d.ts',
+            dts: 'auto-imports.d.ts',
             vueTemplate: true,
         }),
         Components({
-            dts: 'src/components.d.ts',
+            dts: 'components.d.ts',
             resolvers: [ElementPlusResolver()],
         }),
 
@@ -128,13 +131,12 @@ export default defineConfig({
             __DATE__: new Date().toISOString(),
             __RELOAD_SW__: reload ? 'true' : '',
         }),
+
+        VueDevTools(),
     ],
     server: {
         port: 8080,
-        hmr: {
-            host: '127.0.0.1',
-            port: 8080,
-        },
+        host: '127.0.0.1',
     },
 
     // https://github.com/vitest-dev/vitest

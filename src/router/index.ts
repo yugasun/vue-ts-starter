@@ -29,7 +29,7 @@ const router = createRouter({
     routes,
 });
 
-router.beforeEach(async (to, from) => {
+router.beforeEach(async (to) => {
     const token = getToken();
     if (!token && to.name !== 'Index') {
         return { name: 'Index' };

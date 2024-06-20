@@ -34,11 +34,10 @@ const timeAgo = useTimeAgo(date);
 <style lang="scss">
 #app {
     font-family: Avenir, Helvetica, Arial, sans-serif;
-
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    text-align: center;
     line-height: 150%;
+    text-align: center;
 }
 
 .main {

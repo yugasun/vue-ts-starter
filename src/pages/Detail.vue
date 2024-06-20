@@ -1,16 +1,10 @@
 <script lang="ts" setup>
 import { useI18n } from 'vue-i18n';
-import { useRouter } from 'vue-router';
 import { useUserStore } from '@/store/user';
 
 const { t } = useI18n();
-const router = useRouter();
 
 const userStore = useUserStore();
-
-function goBack() {
-    router.back();
-}
 </script>
 
 <template>
@@ -34,7 +28,7 @@ function goBack() {
 
 .user-info {
     margin: 20px auto;
-    font-weight: bold;
     color: green;
+    font-weight: bold;
 }
 </style>

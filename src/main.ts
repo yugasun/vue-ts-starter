@@ -7,7 +7,7 @@ import { router } from './router';
 import { i18n } from './i18n';
 import { updateTheme } from './utils/theme';
 
-import 'uno.css';
+import 'virtual:uno.css';
 import '@/assets/styles/index.scss';
 // If you want to use ElMessage, import it.
 import 'element-plus/theme-chalk/src/message.scss';

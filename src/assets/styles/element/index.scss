@@ -1,4 +1,4 @@
-$--colors: (
+$base-colors: (
     'primary': (
         'base': green,
     ),
@@ -22,7 +22,7 @@ $--colors: (
 // You should use them in scss, because we calculate it by sass.
 // comment next lines to use default color
 @forward 'element-plus/theme-chalk/src/common/var.scss' with (
-    $colors: $--colors,
+    $colors: $base-colors,
     $button-padding-horizontal: (
         'default': 50px,
     )

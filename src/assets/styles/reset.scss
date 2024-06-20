@@ -79,10 +79,10 @@ time,
 mark,
 audio,
 video {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
     border: 0;
-    box-sizing: border-box;
     font-size: 100%;
     font: inherit; // stylelint-disable-line
     vertical-align: baseline;
@@ -104,8 +104,8 @@ section {
 }
 
 body {
-    line-height: 1;
     padding: 0 !important;
+    line-height: 1;
 }
 
 ol,
@@ -127,8 +127,8 @@ q::after {
 }
 
 table {
-    border-collapse: collapse;
     border-spacing: 0;
+    border-collapse: collapse;
 }
 
 [hidden] {

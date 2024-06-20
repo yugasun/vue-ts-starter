@@ -15,6 +15,7 @@ Vue template for starter using Vue3 + TypeScript + Vite + Pinia + Unocss 🚀
 -   [x] [Vue Router](https://github.com/vuejs/router)
 -   [x] [TypeScript](https://www.typescriptlang.org/)
 -   [x] [Vite](https://vitejs.dev/) Next Generation Frontend Tooling
+-   [x] [Vue DevTools](https://devtools-next.vuejs.org) Vue DevTools - Unleash Vue Developer Experience
 -   [x] [vite-plugin-pwa](https://github.com/antfu/vite-plugin-pwa) Zero-config PWA for Vite
 -   [x] [Pinia](https://pinia.vuejs.org/) The Vue Store that you will enjoy using
 -   [x] ⚙️ [Vitest](https://github.com/vitest-dev/vitest) Unit Testing with Vitest
